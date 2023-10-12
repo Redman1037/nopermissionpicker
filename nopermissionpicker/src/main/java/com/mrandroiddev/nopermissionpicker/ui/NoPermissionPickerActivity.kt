@@ -40,10 +40,25 @@ class NoPermissionPickerActivity : ComponentActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+//        val windowInsetsController = WindowCompat.getInsetsController(window, window.decorView)
+//        windowInsetsController.systemBarsBehavior =
+//            WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE
+//        windowInsetsController.hide(WindowInsetsCompat.Type.navigationBars())
+//        window
+//            .setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+//        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+//
         super.onCreate(savedInstanceState)
 
         setFinishOnTouchOutside(false)
-        window.statusBarColor = 0
+//        window.setFlags(
+//            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+//        )
+
+         window.statusBarColor = 0
 //        window.decorView.setBackgroundColor(Color.TRANSPARENT)
         window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -105,7 +120,7 @@ class NoPermissionPickerActivity : ComponentActivity() {
 
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val uri = Uri.fromFile(File(currentPhotoPath+currentPhotoName))
+            val uri = Uri.fromFile(File(currentPhotoPath))
             onImagePickedListener?.onImagePicked(uri)
             finish()
         }else if (pickerType == NoPermissionPickerType.CAMERA.value){

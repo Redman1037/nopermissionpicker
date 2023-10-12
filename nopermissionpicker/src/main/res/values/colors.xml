@@ -2,6 +2,7 @@
 <resources>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="npp_background">#D3D0D0</color>
     <color name="npp_text_color">#1E1C1C</color>
     <color name="npp_divider_color">#1E1C1C</color>
     <color name="npp_theme_color">#1E1C1C</color>
