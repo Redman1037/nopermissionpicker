@@ -60,7 +60,7 @@ fun PickerResult(modifier: Modifier = Modifier) {
     if (pickImage.value == true) {
         NoPermissionPicker.pickImage(
             activity,
-            noPermissionPickerType = NoPermissionPickerType.GALLERY
+            noPermissionPickerType = NoPermissionPickerType.CAMERA_AND_GALLERY
         ) { uriResult ->
             if (uriResult != null) {
                 uri.value = uriResult
